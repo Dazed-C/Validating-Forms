@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Validating Forms</title>
+    <link rel="stylesheet" href="Styles/main.css" />
+    <link rel="stylesheet" href="Styles/normalize.css" />
+    <script src="Scripts/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Forms to Validate</h1>
+        <p class="inlineP">Fields with an <p class="redColor">*</p> are required</p>
+
+        <div>
+            <form onsubmit="return checkForm(this)">
+                <label for="username"><p>*</p>Username:</label><br />
+                <input type="text" id="username" name="username" placeholder="Username" /><br />
+                <label for="password"><p>*</p>Password:</label><br />
+                <input type="password" id="password" name="password" placeholder="Password" /><br />
+                <label for="password2"><p>*</p>Confirm Password:</label><br />
+                <input type="password" id="password2" name="password2" placeholder="Password" /><br />
+                <label for="dateofbirth"><p>*</p>Date of Birth:</label><br />
+                <input type="date" id="dob" name="dob" min="1900-01-01" /><br />
+                <label for="email"><p>*</p>Email Address:</label><br />
+                <input type="email" id="email" name="email" placeholder="email@domain.com" /><br />
+                <label for="contactNumber">Contact Number:</label><br />
+                <input type="tel" id="contactNumber" name="contactNumber" /><br />
+                <input type="checkbox" id="terms" name="terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please check to indicate that you have read and accept the Terms and Conditions' : '')" required /><p id="checkboxP">I accept the Terms and Conditions</p><br />
+                <input type="submit" id="submit" name="submit" value="Submit" />
+            </form>
+        </div>
+        <!-- Change from alert to text box display/popup & add a tooltip of the password requirements -->
+    </main>
+    <script src="Scripts/myscript.js"></script>
+    
+</body>
+</html>
